@@ -1,0 +1,5 @@
+- include: "{{sasukame_language}}.yml"
+
+- name: Output run result
+  debug: msg={{sasukame_result.stdout_lines}}
+

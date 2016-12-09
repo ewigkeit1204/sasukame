@@ -1,0 +1,14 @@
+- name: Create Hello class
+  template: src=java/Hello.java.j2 dest={{sasukame_dest}}/Hello.java
+
+- name: Compile Hello class
+  shell: javac Hello.java
+  args:
+    chdir: "{{sasukame_dest}}"
+
+- name: Run Hello class
+  shell: java Hello
+  args:
+    chdir: "{{sasukame_dest}}"
+  register: sasukame_result
+
